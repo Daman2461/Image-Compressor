@@ -24,7 +24,7 @@ if uploaded_file is not None:
     # Compress the uploaded image using the compress function
     if st.button("Compress Image"):
         compressed_image = compress(image,n,it)
-        if(compressed_image==-1).any():
+        if(compressed_image==-1):
             st.error("Invalid Image")
         
         # Display the compressed image
