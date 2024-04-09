@@ -36,6 +36,7 @@ def compress(im,n=20,iterations=10,ok=0):
     
     if(a.shape[2]>3):
         ok=0
+        return [],ok
         
     x  =np.reshape(a, (a.shape[0] * a.shape[1], 3))
     
