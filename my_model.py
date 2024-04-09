@@ -1,6 +1,5 @@
 import numpy as np
 import random
-import pickle
 
 
 
@@ -26,7 +25,7 @@ def recompute_cen(x,cen,clo):
 
 
 
-def compress(im,n=20,iterations=10):
+def compress(im,n=20,iterations=10,ok=0):
 
     a = np.asarray(im)
     
@@ -36,12 +35,13 @@ def compress(im,n=20,iterations=10):
     original=a.shape
     
     if(a.shape[2]>3):
-        return -1
+        ok=0
+        
     x  =np.reshape(a, (a.shape[0] * a.shape[1], 3))
     
     cen=[]
     
-    
+    ok=1
     for i in range(n):
         r=random.randint(0,x.shape[0])
         cen.append(x[r])
@@ -64,6 +64,6 @@ def compress(im,n=20,iterations=10):
     x_compressed = (x_compressed * 255).astype(np.uint8)
     
    
-    return x_compressed
+    return x_compressed,ok
 
 
