@@ -1,7 +1,6 @@
 import streamlit as st
-import pickle
 from PIL import Image
-import sys
+
 
 
 from my_model import compress
@@ -23,12 +22,12 @@ if uploaded_file is not None:
     
     # Compress the uploaded image using the compress function
     if st.button("Compress Image"):
-        compressed_image = compress(image,n,it)
-        if(compressed_image==-1).any():
+        compressed_image,ok = compress(image,n,it)
+        if ok==0:
             st.error("Invalid Image")
         
         # Display the compressed image
-        else:
+        elif ok==1:
             
             st.image(compressed_image, caption="Compressed Image", use_column_width=True)
         
