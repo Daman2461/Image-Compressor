@@ -35,7 +35,7 @@ def compress(im,n=20,iterations=10,ok=0):
     original=a.shape
     
     if len(a.shape) < 3 or a.shape[2] <= 3:
-        return None, False  # Return None and False to indicate failure
+        return None, 0  # Return None and False to indicate failure
         
     x  =np.reshape(a, (a.shape[0] * a.shape[1], 3))
     
