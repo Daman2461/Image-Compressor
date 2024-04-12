@@ -1,5 +1,6 @@
 # Image-Compressor
 Image Compressor Web App using K-means(Machine Learning)
+
 ACCESS THE WEB APP HERE:
 
 https://image-compressing.streamlit.app/
